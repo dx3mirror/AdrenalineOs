@@ -1,0 +1,10 @@
+include:
+  - project: 'AdrenalineOs/ci-templates'
+    file: '/authenticate.yml'
+
+get_kube_token.dev:
+  extends: .get_kube_token_env.dev
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" 
+      when: never
+    - if: '$CI_COMMIT_BRANCH =~ /^(develop|feature\/.*|$DEPLOY_BRANCH|dynamic\/.*)/'

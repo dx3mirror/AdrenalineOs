@@ -1,0 +1,30 @@
+---
+.get_kube_token:
+  image: docker:20.10.16
+  stage: authenticate
+  script:
+    - apk update && apk add curl bash jq
+    #- curl {cloud storage for deployment} | bash -s -- -i /opt/yc -n
+    - /opt/yc/bin/yc config profile create deploy_account
+    - echo $YC_KEY > sa-key.json
+    - /opt/yc/bin/yc config set service-account-key sa-key.json
+    - export KUBE_TOKEN=$(/opt/yc/bin/yc managed-kubernetes create-token | jq -r .status.token)
+    - echo "KUBE_TOKEN=${KUBE_TOKEN}" >> token.env
+    - test -n "$KUBE_TOKEN"
+  allow_failure: false
+  artifacts:
+    reports:
+      dotenv: token.env
+    expire_in: "1 hour"
+
+.get_kube_token_env.dev:
+  extends: .get_kube_token
+  environment:
+    name: develop
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" 
+      when: never
+    - if: $CI_COMMIT_BRANCH == "develop"
+      when: always
+
+#next stand for development

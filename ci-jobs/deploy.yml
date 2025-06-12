@@ -1,0 +1,5 @@
+include:
+  - project: 'infrastructure-projects/ci-templates'
+    file: '/deploy.yml'
+
+#In the future, enter projects for the deploy, by priority

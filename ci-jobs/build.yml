@@ -1,0 +1,5 @@
+include:
+  - project: 'AdrenalineOs/ci-templates'
+    file: '/build.yml'
+
+#In the future, enter projects for the build, by priority
