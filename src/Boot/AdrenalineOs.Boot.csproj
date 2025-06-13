@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- x86-64 UEFI -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <StripSymbols>true</StripSymbols>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <NativeCode Include="src/Boot/Cpu/crx.S" />
+    <NativeCode Include="src/Boot/Cpu/msr.S" />
+    <NativeCode Include="src/Boot/Interrupts/isr.S" />
+    <NativeCode Include="src/Boot/Drivers/io.S" />
+  </ItemGroup>
+</Project>

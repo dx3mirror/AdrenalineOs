@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Boot", "Boot", "{CC6D94C5-C332-4A88-A059-664E6A5E6BE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdrenalineOs.Boot", "Boot\AdrenalineOs.Boot.csproj", "{82578F57-A30A-4132-8855-580C6A05DADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Docker|Any CPU = Docker|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Docker|Any CPU.ActiveCfg = Docker|Any CPU
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Docker|Any CPU.Build.0 = Docker|Any CPU
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82578F57-A30A-4132-8855-580C6A05DADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82578F57-A30A-4132-8855-580C6A05DADA} = {CC6D94C5-C332-4A88-A059-664E6A5E6BE8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BD6DE53-60B5-4316-9C86-02574AC8B9A5}
+	EndGlobalSection
+EndGlobal
